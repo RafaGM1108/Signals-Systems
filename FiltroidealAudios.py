@@ -73,7 +73,6 @@ def main():
         if st.button("Aplicar filtro"):
             filtered_audio = apply_filter(selected_frequency, audio_data, sample_rate)
 
-            # Guardar el audio filtrado en un archivo temporal
             with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
                 temp_filename = temp_file.name
                 sf.write(temp_filename, filtered_audio, sample_rate)
